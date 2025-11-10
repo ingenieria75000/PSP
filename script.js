@@ -50,7 +50,7 @@ document.getElementById("ppsForm").addEventListener("submit", function (e) {
   });
 });
 
-// FORMULARIO 2
+// FORMULARIO 2 (Capacitación)
 document.getElementById("formCapacitacion").addEventListener("submit", function (e) {
   e.preventDefault();
   const curso = document.getElementById("curso").value.trim();
@@ -67,7 +67,7 @@ document.getElementById("formCapacitacion").addEventListener("submit", function 
   this.reset();
 });
 
-// FORMULARIO 3
+// FORMULARIO 3 (Asistencia)
 document.getElementById("formAsistencia").addEventListener("submit", function (e) {
   e.preventDefault();
   const empleado = document.getElementById("empleadoAsistencia").value.trim();
