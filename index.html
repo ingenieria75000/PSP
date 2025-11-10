@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal PPS - Evaluación de Desempeño</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Portal PPS - Evaluación de Desempeño</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#formulario">Formulario</a></li>
+        <li><a href="#resultado">Resultados</a></li>
+        <li><a href="#diagramas">Diagrama PPS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>Metodología PPS</h2>
+      <p>Este portal aplica la metodología PPS (Preparación, Procesamiento y Salida) mediante un formulario de evaluación del desempeño laboral.</p>
+      <ol>
+        <li><strong>Preparación:</strong> Captura de los datos del empleado.</li>
+        <li><strong>Procesamiento:</strong> Validación y cálculo del desempeño.</li>
+        <li><strong>Salida:</strong> Presentación del resultado de evaluación.</li>
+      </ol>
+    </section>
+
+    <section id="formulario">
+      <h2>Formulario de Evaluación del Desempeño</h2>
+      <form id="ppsForm">
+        <fieldset>
+          <legend>Datos del Empleado</legend>
+
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <label for="departamento">Departamento:</label>
+          <select id="departamento" name="departamento" required>
+            <option value="">Seleccione...</option>
+            <option value="Administración">Administración</option>
+            <option value="Producción">Producción</option>
+            <option value="Ventas">Ventas</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+          </select>
+
+          <label for="edad">Edad:</label>
+          <input type="number" id="edad" name="edad" min="18" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Evaluación de Desempeño</legend>
+
+          <label for="puntualidad">Puntualidad (0-10):</label>
+          <input type="number" id="puntualidad" name="puntualidad" min="0" max="10" required />
+
+          <label for="productividad">Productividad (0-10):</label>
+          <input type="number" id="productividad" name="productividad" min="0" max="10" required />
+
+          <label for="trabajoEquipo">Trabajo en equipo (0-10):</label>
+          <input type="number" id="trabajoEquipo" name="trabajoEquipo" min="0" max="10" required />
+        </fieldset>
+
+        <button type="submit">Calcular Desempeño</button>
+      </form>
+    </section>
+
+    <section id="resultado">
+      <h2>Resultado</h2>
+      <div id="resultadoContenido"></div>
+      <section id="resultado">
+  <h2>Resultado</h2>
+  <div id="resultadoContenido"></div>
+  <canvas id="graficoDesempeno" width="400" height="200"></canvas>
+</section>
+
+    </section>
+
+    <section id="diagramas">
+      <h2>Diagrama PPS</h2>
+      <img src="diagrama-pps.png" alt="Diagrama PPS" class="responsive-img" />
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Sistema Web PPS</p>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
