@@ -1,95 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal PPS - Evaluación de Desempeño</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal PPS - Sistema Web</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Portal PPS - Evaluación de Desempeño</h1>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#formulario">Formulario</a></li>
-        <li><a href="#resultado">Resultados</a></li>
-        <li><a href="#diagramas">Diagrama PPS</a></li>
-      </ul>
-    </nav>
+    <h1>Portal PPS</h1>
+    <p>Metodología de Planeación y Seguimiento de Personal</p>
   </header>
 
   <main>
-    <section id="inicio">
-      <h2>Metodología PPS</h2>
-      <p>Este portal aplica la metodología PPS (Preparación, Procesamiento y Salida) mediante un formulario de evaluación del desempeño laboral.</p>
+    <!-- FORMULARIO 1 -->
+    <section id="formulario1">
+      <h2>Evaluación PPS</h2>
       <ol>
-        <li><strong>Preparación:</strong> Captura de los datos del empleado.</li>
-        <li><strong>Procesamiento:</strong> Validación y cálculo del desempeño.</li>
-        <li><strong>Salida:</strong> Presentación del resultado de evaluación.</li>
+        <li>Complete los datos del empleado.</li>
+        <li>Ingrese los puntajes de desempeño (0 a 10).</li>
+        <li>Presione “Calcular Desempeño”.</li>
       </ol>
-    </section>
 
-    <section id="formulario">
-      <h2>Formulario de Evaluación del Desempeño</h2>
       <form id="ppsForm">
-        <fieldset>
-          <legend>Datos del Empleado</legend>
+        <label>Nombre:</label>
+        <input type="text" id="nombre" required>
 
-          <label for="nombre">Nombre completo:</label>
-          <input type="text" id="nombre" name="nombre" required />
+        <label>Departamento:</label>
+        <select id="departamento" required>
+          <option value="">Seleccione</option>
+          <option value="Producción">Producción</option>
+          <option value="Calidad">Calidad</option>
+          <option value="Administración">Administración</option>
+        </select>
 
-          <label for="departamento">Departamento:</label>
-          <select id="departamento" name="departamento" required>
-            <option value="">Seleccione...</option>
-            <option value="Administración">Administración</option>
-            <option value="Producción">Producción</option>
-            <option value="Ventas">Ventas</option>
-            <option value="Recursos Humanos">Recursos Humanos</option>
-          </select>
+        <label>Edad:</label>
+        <input type="number" id="edad" min="18" required>
 
-          <label for="edad">Edad:</label>
-          <input type="number" id="edad" name="edad" min="18" required />
-        </fieldset>
+        <label>Puntualidad (0-10):</label>
+        <input type="number" id="puntualidad" min="0" max="10" required>
 
-        <fieldset>
-          <legend>Evaluación de Desempeño</legend>
+        <label>Productividad (0-10):</label>
+        <input type="number" id="productividad" min="0" max="10" required>
 
-          <label for="puntualidad">Puntualidad (0-10):</label>
-          <input type="number" id="puntualidad" name="puntualidad" min="0" max="10" required />
-
-          <label for="productividad">Productividad (0-10):</label>
-          <input type="number" id="productividad" name="productividad" min="0" max="10" required />
-
-          <label for="trabajoEquipo">Trabajo en equipo (0-10):</label>
-          <input type="number" id="trabajoEquipo" name="trabajoEquipo" min="0" max="10" required />
-        </fieldset>
+        <label>Trabajo en Equipo (0-10):</label>
+        <input type="number" id="trabajoEquipo" min="0" max="10" required>
 
         <button type="submit">Calcular Desempeño</button>
       </form>
+
+      <ul>
+        <li>Todos los campos son obligatorios.</li>
+        <li>La edad mínima aceptada es 18 años.</li>
+        <li>Los valores de desempeño deben estar entre 0 y 10.</li>
+      </ul>
     </section>
 
+    <!-- FORMULARIO 2 -->
+    <section id="formulario2">
+      <h2>Formulario de Capacitación</h2>
+      <ol>
+        <li>Ingrese los datos del curso.</li>
+        <li>Seleccione nivel de satisfacción.</li>
+        <li>Envíe su opinión.</li>
+      </ol>
+
+      <form id="formCapacitacion">
+        <label>Nombre del Curso:</label>
+        <input type="text" id="curso" required>
+
+        <label>Instructor:</label>
+        <input type="text" id="instructor" required>
+
+        <label>Nivel de satisfacción (1-5):</label>
+        <input type="number" id="satisfaccion" min="1" max="5" required>
+
+        <button type="submit">Enviar Opinión</button>
+      </form>
+    </section>
+
+    <!-- FORMULARIO 3 -->
+    <section id="formulario3">
+      <h2>Formulario de Asistencia</h2>
+      <ol>
+        <li>Ingrese fecha y hora de ingreso.</li>
+        <li>Ingrese hora de salida.</li>
+        <li>Presione “Registrar”.</li>
+      </ol>
+
+      <form id="formAsistencia">
+        <label>Nombre del Empleado:</label>
+        <input type="text" id="empleadoAsistencia" required>
+
+        <label>Fecha:</label>
+        <input type="date" id="fecha" required>
+
+        <label>Hora de Entrada:</label>
+        <input type="time" id="horaEntrada" required>
+
+        <label>Hora de Salida:</label>
+        <input type="time" id="horaSalida" required>
+
+        <button type="submit">Registrar</button>
+      </form>
+    </section>
+
+    <!-- RESULTADO -->
     <section id="resultado">
       <h2>Resultado</h2>
       <div id="resultadoContenido"></div>
-      <section id="resultado">
-  <h2>Resultado</h2>
-  <div id="resultadoContenido"></div>
-  <canvas id="graficoDesempeno" width="400" height="200"></canvas>
-</section>
-
-    </section>
-
-    <section id="diagramas">
-      <h2>Diagrama PPS</h2>
-      <img src="diagrama-pps.png" alt="Diagrama PPS" class="responsive-img" />
+      <canvas id="graficoDesempeno" width="400" height="200"></canvas>
     </section>
   </main>
 
   <footer>
     <p>© 2025 - Sistema Web PPS</p>
   </footer>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
