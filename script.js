@@ -1,3 +1,4 @@
+// FORMULARIO 1
 document.getElementById("ppsForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -49,16 +50,37 @@ document.getElementById("ppsForm").addEventListener("submit", function (e) {
   });
 });
 
-// Formulario 2
+// FORMULARIO 2
 document.getElementById("formCapacitacion").addEventListener("submit", function (e) {
   e.preventDefault();
-  alert("Gracias por registrar su opinión sobre la capacitación.");
+  const curso = document.getElementById("curso").value.trim();
+  const instructor = document.getElementById("instructor").value.trim();
+  const satisfaccion = document.getElementById("satisfaccion").value;
+
+  if (!curso || !instructor || !satisfaccion) return;
+
+  const lista = document.getElementById("listaCapacitaciones");
+  const item = document.createElement("li");
+  item.textContent = `Curso: ${curso} | Instructor: ${instructor} | Satisfacción: ${satisfaccion}/5`;
+  lista.appendChild(item);
+
   this.reset();
 });
 
-// Formulario 3
+// FORMULARIO 3
 document.getElementById("formAsistencia").addEventListener("submit", function (e) {
   e.preventDefault();
-  alert("Asistencia registrada correctamente.");
+  const empleado = document.getElementById("empleadoAsistencia").value.trim();
+  const fecha = document.getElementById("fecha").value;
+  const entrada = document.getElementById("horaEntrada").value;
+  const salida = document.getElementById("horaSalida").value;
+
+  if (!empleado || !fecha || !entrada || !salida) return;
+
+  const lista = document.getElementById("listaAsistencia");
+  const item = document.createElement("li");
+  item.textContent = `${empleado} | Fecha: ${fecha} | Entrada: ${entrada} | Salida: ${salida}`;
+  lista.appendChild(item);
+
   this.reset();
 });
